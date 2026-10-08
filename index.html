@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Řím 22.–25. 4. 2027</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Řím 2027">
+<meta name="theme-color" content="#1f4d7a">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<style>
+:root{--bg:#f2f5f7;--card:#fff;--ink:#14263a;--mute:#5d6e7e;--line:#d6dee5;--pine:#2c6a4e;--pine-t:#e1f0e8;--sun:#d98e1c;--sun-t:#fbefd6;--brick:#a8432e;--brick-t:#f8e3de;--blue:#1f4d7a;--blue-t:#e0ebf6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1822;--card:#16232f;--ink:#e6edf3;--mute:#93a4b3;--line:#27384a;--pine:#6fc29b;--pine-t:#183a2c;--sun:#f0b44c;--sun-t:#3a2c10;--brick:#ee8a72;--brick-t:#3d1d16;--blue:#7ab2e6;--blue-t:#173149}}
+:root[data-theme="dark"]{--bg:#0e1822;--card:#16232f;--ink:#e6edf3;--mute:#93a4b3;--line:#27384a;--pine:#6fc29b;--pine-t:#183a2c;--sun:#f0b44c;--sun-t:#3a2c10;--brick:#ee8a72;--brick-t:#3d1d16;--blue:#7ab2e6;--blue-t:#173149}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 48px}
+header{padding:28px 0 8px}
+h1{font-size:clamp(2rem,8vw,3.2rem);line-height:1;margin:0;font-weight:800;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:8px 0 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:16px 0 0}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.fact b{display:block;font-size:.8rem;color:var(--mute);font-weight:600}
+nav.main{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 0 8px;display:flex;gap:6px;overflow-x:auto}
+nav button,.days button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected=true],.days button[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+:root[data-theme="dark"] nav button[aria-selected=true],:root[data-theme="dark"] .days button[aria-selected=true]{color:#0e1822}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.days{display:flex;gap:6px;overflow-x:auto;margin:8px 0 16px}
+.dayhead{margin:0 0 14px}
+.dayhead h2{margin:0;font-size:1.5rem;letter-spacing:-.02em}
+.dayhead p{margin:2px 0 0;color:var(--mute)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl:before{content:"";position:absolute;left:78px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:0 0 16px;position:relative}
+.tl li:before{content:"";position:absolute;left:73px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--blue)}
+.tl li.sun:before{border-color:var(--sun);background:var(--sun)}
+.tl li.fix:before{border-color:var(--brick)}
+.time{font-weight:600;font-size:.88rem;color:var(--mute);text-align:right;padding-top:3px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.box h3{margin:0;font-size:1.05rem}
+.it{font-style:italic;color:var(--blue);font-size:.88rem;margin-top:1px}
+.box p{margin:4px 0 0;color:var(--mute);font-size:.93rem}
+.tag{display:inline-block;margin:8px 6px 0 0;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600}
+.t-m{background:var(--blue-t);color:var(--blue)}.t-r{background:var(--brick-t);color:var(--brick)}.t-s{background:var(--sun-t);color:var(--sun)}
+.sec{display:none}.sec.on{display:block}
+.group{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 14px 10px;margin:0 0 14px}
+.group h3{margin:10px 0 4px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);cursor:pointer}
+.chk:first-of-type{border-top:0}
+.chk input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--pine);flex:none}
+.chk input:checked+span{text-decoration:line-through;color:var(--mute)}
+.prog{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:4px 0 14px}
+.prog i{display:block;height:100%;width:0;background:var(--pine);transition:width .25s}
+.cnt{color:var(--mute);margin:0}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card h3{margin:0 0 4px;font-size:1.02rem}.card p{margin:0;color:var(--mute);font-size:.92rem}
+.line{display:inline-block;min-width:26px;text-align:center;border-radius:6px;padding:0 6px;font-weight:800;color:#fff;margin-right:6px}
+.A{background:#c4522a}.B{background:#1f6fb5}.L{background:#2c6a4e}
+.links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 10px;color:var(--ink);text-decoration:none}
+.links a b{display:block}.links a span{color:var(--mute);font-size:.88rem;word-break:break-all}
+.note{background:var(--sun-t);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.warn{background:var(--brick-t)}
+.reset{font:inherit;background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:8px 0}
+@media (max-width:480px){.tl:before{left:58px}.tl li{grid-template-columns:50px 1fr;gap:18px}.tl li:before{left:53px}.time{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Řím<br>22.–25. dubna 2027</h1>
+<p class="sub">Itinerář, rezervace a doprava na jednom místě</p>
+<div class="facts">
+<div class="fact"><b>Přílet</b>Čt 22. 4., 8:25, FCO</div>
+<div class="fact"><b>Odlet</b>Ne 25. 4., 18:40</div>
+<div class="fact"><b>Skútr</b>Pá 14:00 – So 16:00</div>
+<div class="fact"><b>Pozor</b>Ne 25. 4. je státní svátek</div>
+</div>
+</header>
+<nav class="main" role="tablist">
+<button role="tab" aria-selected="true" data-s="plan">Program</button>
+<button role="tab" aria-selected="false" data-s="check">Checklist</button>
+<button role="tab" aria-selected="false" data-s="move">Doprava</button>
+<button role="tab" aria-selected="false" data-s="links">Odkazy</button>
+</nav>
+
+<section class="sec on" id="plan">
+<div class="days" id="days"></div>
+<div id="day"></div>
+</section>
+
+<section class="sec" id="check">
+<p class="cnt" id="cnt"></p>
+<div class="prog"><i id="bar"></i></div>
+<div id="lists"></div>
+<button class="reset" id="reset">Smazat všechna zaškrtnutí</button>
+</section>
+
+<section class="sec" id="move">
+<div class="grid">
+<div class="card"><h3><span class="line L">FCO</span>Leonardo Express</h3><p>Fiumicino – Termini, nonstop cca 30 min, jízdenka kolem 14 € (ověřit).</p></div>
+<div class="card"><h3><span class="line A">A</span>Metro A</h3><p>Spagna, Barberini, Ottaviano (Vatikán).</p></div>
+<div class="card"><h3><span class="line B">B</span>Metro B</h3><p>Termini, Cavour (Monti), Colosseo, Circo Massimo, Piramide (Testaccio, Ostia).</p></div>
+<div class="card"><h3><span class="line L">Lido</span>Roma-Lido do Ostie</h3><p>Nástup na Porta San Paolo u Piramide, výstup Lido Centro. Cesta z Termini 1 h až 1 h 15 min.</p></div>
+<div class="card" style="grid-column:1/-1"><h3>Jak platit MHD</h3><p><b>Nejjednodušeji bezkontaktně (Tap &amp; Go):</b> přiložte kartu nebo telefon k turniketu v metru a ke čtečce v autobuse či tramvaji. Strop je 8,50 € za 24 h. Každý přikládá vlastní kartu nebo telefon.<br><b>Papírový lístek BIT:</b> 1,50 €, platí 100 minut, jeden vstup do metra, neomezené přestupy na autobus a tramvaj. Koupíte v automatu nebo v trafice (tabacchi) a musíte ho orazítkovat. Cena se může do roku 2027 změnit.<br><b>Denní jízdenky</b> (24 h 8,50 €, 48 h 15 €, 72 h 22 €) se vyplatí od cca 5 jízd denně, pro tento plán nejsou potřeba.<br><b>Nepoužívejte zároveň aplikaci a kartu,</b> turnikety je nemusí rozlišit a stáhnou peníze z karty.<br><b>Leonardo Express</b> městská jízdenka nepokrývá, kupte ho zvlášť u Trenitalia. U vlaku Roma–Lido ověřte na Atac, že v něm platí bezkontaktní platba.</p></div>
+<div class="card"><h3>Slovníček</h3><p><b>Termini</b> hlavní nádraží. <b>Lungotevere</b> silnice podél Tibery. <b>Roma–Lido</b> příměstský vlak do Ostie. <b>BIT</b> jízdenka MHD. <b>ZTL</b> zóna s omezeným vjezdem. <b>Lido</b> pláž.</p></div>
+<div class="card"><h3>Skútr</h3><p>Vraťte ho už v sobotu, na letiště se jede vlakem.</p></div>
+</div>
+<div class="note" style="margin-top:14px">Před odjezdem zkontrolujte stávky v dopravě na 22. a 25. 4. Řím také testuje rezervaci (cca 2 €) pro nižší schody Fontány di Trevi, ověřte, zda platí v dubnu 2027.</div>
+</section>
+
+<section class="sec" id="links">
+<div class="links">
+<a href="https://tickets.museivaticani.va" target="_blank" rel="noopener"><b>Vatikánská muzea</b>Oficiální vstupenky<br><span>tickets.museivaticani.va</span></a>
+<a href="https://parcocolosseo.it" target="_blank" rel="noopener"><b>Koloseum, Forum, Palatin</b>Kombinovaná vstupenka s časovým slotem<br><span>parcocolosseo.it</span></a>
+<a href="https://ecomoverent.com/catalog/" target="_blank" rel="noopener"><b>Půjčovna skútrů Eco Move Rent</b>Katalog, Via dei Mille 8<br><span>ecomoverent.com/catalog</span></a>
+<a href="https://www.atac.roma.it" target="_blank" rel="noopener"><b>Atac</b>Metro, autobusy, Roma-Lido<br><span>atac.roma.it</span></a>
+<a href="https://www.trenitalia.com" target="_blank" rel="noopener"><b>Trenitalia</b>Leonardo Express a regionální vlaky<br><span>trenitalia.com</span></a>
+<a href="https://www.turismoroma.it" target="_blank" rel="noopener"><b>Turismo Roma</b>Oficiální turistické informace<br><span>turismoroma.it</span></a>
+</div>
+</section>
+</div>
+
+<script>
+var DAYS=[
+{l:"Čt 22. 4.",t:"Příjezd a centrum",d:"Přílet ráno, první seznámení pěšky",i:[
+["8:25","Přílet na letiště Fiumicino|Aeroporto Leonardo da Vinci (FCO)","Odbavení, pak vlak do města.","f"],
+["9:30","Leonardo Express na nádraží Termini|Stazione Roma Termini","Cca 30 min. Kufry na hotel nebo do úschovny.","","Vlak"],
+["Dopoledne","Pantheon a náměstí Navona|Pantheon · Piazza Navona","Klidný začátek pěšky."],
+["Odpoledne","Fontána di Trevi|Fontana di Trevi","Raději pozdě odpoledne, přes den je tam nával."],
+["Pozdě odpoledne","Španělské schody a Via Condotti|Scalinata di Trinità dei Monti · Piazza di Spagna · Via dei Condotti","První nakupování, pokračujte ulicí Via del Corso.","","Metro A Spagna"],
+["Večer","Trastevere|Rione Trastevere","Uličky, procházka a večeře."]]},
+{l:"Pá 23. 4.",t:"Vatikán, skútr, Aventin",d:"Nejnáročnější ráno, odpoledne volnější",i:[
+["První slot","Vatikánská muzea a Sixtinská kaple|Musei Vaticani · Cappella Sistina","Rezervace nutná, jinak hodinové fronty.","f","Metro A Ottaviano"],
+["Dopoledne","Bazilika sv. Petra|Basilica di San Pietro","Vstup zdarma, ověřte otevírací dobu."],
+["Poledne","Nákupní ulice Via Cola di Rienzo|Via Cola di Rienzo","Nákupy a oběd, méně turistů."],
+["14:00","Vyzvednutí skútru|Eco Move Rent, Via dei Mille 8","Řidičák B, karta na kauci.","f"],
+["Odpoledne","Projížďka podél Tibery|Lungotevere","Silnice na nábřeží řeky Tibery."],
+["Zlatá hodinka","Oranžová zahrada na Aventinu|Giardino degli Aranci (Parco Savello)","Zavírá se před setměním, přijďte o 1,5 h dřív a ověřte dobu.","s"],
+["Večer","Večeře","Stůl si zamluvte předem.","f"]]},
+{l:"So 24. 4.",t:"Antický Řím a moře",d:"Koloseum, Via Appia a západ slunce v Ostii",i:[
+["Ráno","Koloseum, Forum Romanum a Palatin|Colosseo · Foro Romano · Palatino","Jeden vstup s časovým slotem.","f","Metro B Colosseo"],
+["Dopoledne","Stará Appijská cesta na skútru|Via Appia Antica","Nejlepší jízda v Římě, v neděli je cesta zavřená."],
+["Poledne","Čtvrť Monti|Rione Monti","Oběd, vintage obchody, butiky.","","Metro B Cavour"],
+["16:00","Vrácení skútru|Eco Move Rent, Via dei Mille 8","U Termini.","f"],
+["17:00","Vlakem do Ostie|Ferrovia Roma–Lido","Metro B na Piramide, pak vlak od Porta San Paolo, výstup Ostia Lido Centro.","","Vlak"],
+["18:15","Promenáda a molo v Ostii|Lungomare · Pontile di Ostia","Procházka u moře."],
+["20:00","Západ slunce a večeře","Ověřte poslední zpáteční spoj Roma–Lido.","s"]]},
+{l:"Ne 25. 4.",t:"Trh a odlet",d:"Státní svátek, počítejte se zavřenými obchody",i:[
+["Dopoledne","Bleší trh|Mercato di Porta Portese","Jen v neděli, do cca 14:00."],
+["Poledne","Klíčová dírka na Aventinu|Buco della Serratura · Piazza dei Cavalieri di Malta","Výhled na kupoli sv. Petra."],
+["14:30","Kufry z hotelu","Odchod z hotelu cca 15:15.","f"],
+["15:50","Leonardo Express z Termini|Stazione Roma Termini","Cca 30 min.","","Vlak"],
+["16:40","Na letišti Fiumicino|FCO","2 hodiny před odletem.","f"],
+["18:40","Odlet do Vídně","","f"]]}];
+var CHECK=[
+["Rezervace a vstupenky",["Ubytování vybrat a zarezervovat (hlídat vzdálenost k metru)","Vatikánská muzea na pátek 23. 4., první ranní slot","Koloseum, Forum a Palatin na sobotu 24. 4., časový slot","Skútr na pá 14:00 až so 16:00, ověřit podmínky pro 125 cc a kauci","Pátek večer: zamluvit stůl","Ubytování: uschování kufrů po příletu a v neděli"]],
+["Doklady a platby",["Občanské průkazy nebo pasy pro oba","Řidičský průkaz B (originál)","Kreditní karta na kauci skútru","Zvážit pojištění skútru","Cestovní pojištění"]],
+["Před odjezdem",["Zkontrolovat stávky v dopravě na 22. a 25. 4.","Ověřit otevírací dobu Giardino degli Aranci","Ověřit otevírací dobu Vatikánu a baziliky sv. Petra","Stáhnout offline mapu Říma","Vyřešit roaming nebo eSIM"]]];
+var KEY="rim2027-check",state={};
+function load(){try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){state={}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function showDay(n){
+ var d=DAYS[n];
+ document.querySelectorAll("#days button").forEach(function(b,k){b.setAttribute("aria-selected",k==n)});
+ var h='<div class="dayhead"><h2>'+esc(d.t)+'</h2><p>'+esc(d.d)+'</p></div><ul class="tl">';
+ d.i.forEach(function(x){
+  var c=x[3]=="s"?"sun":x[3]=="f"?"fix":"";
+  var nm=x[1].split("|");h+='<li class="'+c+'"><div class="time">'+esc(x[0])+'</div><div class="box"><h3>'+esc(nm[0])+'</h3>'+(nm[1]?'<div class="it">'+esc(nm[1])+'</div>':'')+(x[2]?'<p>'+esc(x[2])+'</p>':'')
+  +(x[3]=="f"?'<span class="tag t-r">Pevný bod</span>':'')+(x[3]=="s"?'<span class="tag t-s">Západ slunce</span>':'')
+  +(x[4]?'<span class="tag t-m">'+esc(x[4])+'</span>':'')+'</div></li>'});
+ document.getElementById("day").innerHTML=h+'</ul>'}
+function buildDays(){
+ var h="";DAYS.forEach(function(d,k){h+='<button aria-selected="false" data-d="'+k+'">'+d.l+'</button>'});
+ var el=document.getElementById("days");el.innerHTML=h;
+ el.onclick=function(e){var b=e.target.closest("button");if(b)showDay(+b.dataset.d)}}
+function buildCheck(){
+ var h="";CHECK.forEach(function(g,gi){
+  h+='<div class="group"><h3>'+g[0]+'</h3>';
+  g[1].forEach(function(t,ti){var id=gi+"-"+ti;
+   h+='<label class="chk"><input type="checkbox" data-id="'+id+'"'+(state[id]?" checked":"")+'><span>'+esc(t)+'</span></label>'});
+  h+='</div>'});
+ document.getElementById("lists").innerHTML=h;count()}
+function count(){
+ var all=document.querySelectorAll("#lists input"),done=0;
+ all.forEach(function(i){if(i.checked)done++});
+ document.getElementById("cnt").textContent="Hotovo "+done+" z "+all.length;
+ document.getElementById("bar").style.width=(all.length?done/all.length*100:0)+"%"}
+document.getElementById("lists").onchange=function(e){
+ var i=e.target;if(i.dataset.id){state[i.dataset.id]=i.checked;save();count()}};
+document.getElementById("reset").onclick=function(){state={};save();buildCheck()};
+document.querySelector("nav.main").onclick=function(e){
+ var b=e.target.closest("button");if(!b)return;
+ document.querySelectorAll("nav.main button").forEach(function(x){x.setAttribute("aria-selected",x==b)});
+ document.querySelectorAll(".sec").forEach(function(s){s.classList.toggle("on",s.id==b.dataset.s)})};
+load();buildDays();buildCheck();showDay(0);
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
+</body>
+</html>
